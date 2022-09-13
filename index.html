@@ -19,15 +19,54 @@
         <!-- css -->
         <link rel="stylesheet" href="styles/reset.css" />
         <link rel="stylesheet" href="styles/global.css" />
+        <link rel="stylesheet" href="styles/rock-paper-scissors.css" />
+
         <!-- add link for page specific css -->
     </head>
 
     <body>
         <header>
-            <img src="assets/html_css_js.png" />
-            <h1>Rock Paper Scissors App</h1>
+            <h1>Rock Paper Scissors</h1>
         </header>
 
-        <main></main>
+        <main>
+            <!-- scoreboard section
+            <section>
+                <h2>Scoreboard</h2>
+                <p class="scoreboard">
+                    wins:
+                    <span id="wins-display">4</span>
+                    losses:
+                    <span id="losses-display">2</span>
+                    draws:
+                    <span id="draws-display">3</span>
+                    total plays
+                    <span id="total-plays-display">4</span>
+                </p>
+            </section> -->
+
+            <section id="user-guess-section">
+                <h2>Throw rock, paper or scissors!</h2>
+                    <button id="select-rock-button">
+                        <img src="assets/rock-image.png" alt="rock image" id="rock-image" />
+                    </button>
+                
+                    <button id="select-paper-button">
+                        <img src="assets/paper-image.png" alt="paper image" />
+                    </button>
+                
+                    
+                    <button id="select-scissors-button">
+                        <img src="assets/scissors-image.png" alt="scissors image" />
+                    </button>
+                </div>
+            </section>
+
+            <section id="results-section"  class="hidden">
+                <h2>The result...</h2>
+                <p>You win!</p>
+                <button id="play-again-button">Play again</button>
+            </section>
+        </main>
     </body>
 </html>

@@ -1,16 +1,25 @@
 /* Imports */
+import { getRandomItem } from './utils.js';
 
 /* State */
-let gameState = 'guess'; // 'guess' or 'results'
+let gameState = ''; // 'guess' or 'results'
 let userPlay = ''; //'rock' or 'paper' or 'scissors'
 let computerPlay = ''; //'rock' or 'paper' or 'scissors'
 let result = ''; // 'win' or 'lose' or 'draw'
 
+let wins = 0;
+let losses = 0;
+let draws = 0;
+let totalPlays = 0;
+
+// probability array
+const rps = ['rock', 'paper', 'scissors'];
+
 /* Actions */
 function loadPage() {
-    displayPlay();
+    displayGuess();
     displayResults();
-    // displayScorecard();
+    displayScorecard();
 }
 
 /* User Play */
@@ -19,16 +28,51 @@ const throwRock = document.getElementById('throw-rock-button');
 const throwPaper = document.getElementById('throw-paper-button');
 const throwScissors = document.getElementById('throw-scissors-button');
 const userPlaySection = document.getElementById('user-play-section');
+const resultDisplay = document.getElementById('result-display');
 
 // display
-function displayPlay() {
+function displayGuess() {
     resultsSection.classList.add('hidden');
 }
 
+function playGame(userGuess) {
+    gameState = 'results';
+    userPlay = userGuess;
+    computerPlay = getRandomItem(rps);
+    totalPlays++;
+
+    if (userPlay === computerPlay) {
+        result = 'draw';
+        draws++;
+        resultDisplay.textContent = 'A draw!';
+    }
+    if (userPlay === 'rock' && computerPlay === 'scissors') {
+        result = 'win';
+        wins++;
+        resultDisplay.textContent = 'You won!';
+    }
+    if (userPlay === 'rock' && computerPlay === 'paper') {
+        result = 'lose';
+        wins++;
+        resultDisplay.textContent = 'You lost.';
+    }
+    console.log('user threw', userGuess);
+    console.log('computer threw', computerPlay);
+    console.log('result is', result);
+    console.log('total plays', totalPlays);
+    console.log(resultDisplay.textContent);
+}
+
 // event listeners
-throwRock.addEventListener('click', () => {});
-throwPaper.addEventListener('click', () => {});
-throwScissors.addEventListener('click', () => {});
+throwRock.addEventListener('click', () => {
+    playGame('rock');
+});
+throwPaper.addEventListener('click', () => {
+    playGame('paper');
+});
+throwScissors.addEventListener('click', () => {
+    playGame('scissors');
+});
 
 /* Results */
 // get DOM
@@ -42,7 +86,29 @@ function displayResults() {
         resultsSection.classList.remove('hidden');
     }
 }
+
+function playAgain() {
+    gameState = 'guess';
+    loadPage();
+}
+
 // event listeners
+playAgainButton.addEventListener('click', () => {
+    playAgain();
+});
+
+/* Scoreboard 
+const winsDisplay = document.getElementById('wins-display');
+const lossesDisplay = document.getElementById('losses-display');
+const drawsDisplay = document.getElementById('draws-display');
+const totalPlaysDisplay = document.getElementById('total-plays-display');
+
+function displayScorecard() {
+    winsDisplay.textContent = wins;
+    lossesDisplay.textContent = losses;
+    drawsDisplay.textContent = draws;
+    totalPlaysDisplay.textContent = totalPlays;
+} */
 
 /* Run page load code */
 loadPage();

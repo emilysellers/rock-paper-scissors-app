@@ -97,7 +97,7 @@ playAgainButton.addEventListener('click', () => {
     playAgain();
 });
 
-/* Scoreboard 
+/* Scoreboard  */
 const winsDisplay = document.getElementById('wins-display');
 const lossesDisplay = document.getElementById('losses-display');
 const drawsDisplay = document.getElementById('draws-display');
@@ -108,7 +108,7 @@ function displayScorecard() {
     lossesDisplay.textContent = losses;
     drawsDisplay.textContent = draws;
     totalPlaysDisplay.textContent = totalPlays;
-} */
+}
 
 /* Run page load code */
 loadPage();

@@ -13,7 +13,7 @@ let draws = 0;
 let totalPlays = 0;
 
 // probability array
-const rps = ['rock', 'paper', 'scissors'];
+const choices = ['rock', 'paper', 'scissors'];
 
 /* Actions */
 function loadPage() {
@@ -38,8 +38,11 @@ function displayGuess() {
 function playGame(userGuess) {
     gameState = 'results';
     userPlay = userGuess;
-    computerPlay = getRandomItem(rps);
+    computerPlay = getRandomItem(choices);
     totalPlays++;
+
+    userPlaySection.classList.add('hidden');
+    resultsSection.classList.remove('hidden');
 
     if (userPlay === computerPlay) {
         result = 'draw';
@@ -53,8 +56,28 @@ function playGame(userGuess) {
     }
     if (userPlay === 'rock' && computerPlay === 'paper') {
         result = 'lose';
-        wins++;
+        losses++;
         resultDisplay.textContent = 'You lost.';
+    }
+    if (userPlay === 'paper' && computerPlay === 'rock') {
+        result = 'win';
+        wins++;
+        resultDisplay.textContent = 'You won!';
+    }
+    if (userPlay === 'paper' && computerPlay === 'scissors') {
+        result = 'lose';
+        losses++;
+        resultDisplay.textContent = 'You lost.';
+    }
+    if (userPlay === 'scissors' && computerPlay === 'rock') {
+        result = 'lose';
+        losses++;
+        resultDisplay.textContent = 'You lost.';
+    }
+    if (userPlay === 'scissors' && computerPlay === 'paper') {
+        result = 'win';
+        wins++;
+        resultDisplay.textContent = 'You win.';
     }
     console.log('user threw', userGuess);
     console.log('computer threw', computerPlay);
@@ -89,6 +112,8 @@ function displayResults() {
 
 function playAgain() {
     gameState = 'guess';
+    userPlaySection.classList.remove('hidden');
+    resultsSection.classList.add('hidden');
     loadPage();
 }
 

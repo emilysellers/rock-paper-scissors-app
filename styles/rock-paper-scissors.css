@@ -9,3 +9,12 @@ body {
 .hidden {
     display: none;
 }
+
+.scoreboard {
+    display: grid;
+    grid-template-columns: 10% 5% 10% 5% 10% 5% 10% 5%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

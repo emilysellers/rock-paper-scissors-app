@@ -47,7 +47,7 @@ function playGame(userGuess) {
     if (userPlay === computerPlay) {
         result = 'draw';
         draws++;
-        resultDisplay.textContent = 'A draw!';
+        resultDisplay.textContent = "It's a draw!";
     }
     if (userPlay === 'rock' && computerPlay === 'scissors') {
         result = 'win';
@@ -77,7 +77,7 @@ function playGame(userGuess) {
     if (userPlay === 'scissors' && computerPlay === 'paper') {
         result = 'win';
         wins++;
-        resultDisplay.textContent = 'You win.';
+        resultDisplay.textContent = 'You won!';
     }
     console.log('user threw', userGuess);
     console.log('computer threw', computerPlay);

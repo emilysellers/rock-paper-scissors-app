@@ -18,8 +18,6 @@ const choices = ['rock', 'paper', 'scissors'];
 /* Actions */
 function loadPage() {
     displayGuess();
-    displayResults();
-    displayScorecard();
 }
 
 /* User Play */
@@ -79,6 +77,9 @@ function playGame(userGuess) {
         wins++;
         resultDisplay.textContent = 'You won!';
     }
+
+    displayResults();
+    displayScorecard();
     console.log('user threw', userGuess);
     console.log('computer threw', computerPlay);
     console.log('result is', result);

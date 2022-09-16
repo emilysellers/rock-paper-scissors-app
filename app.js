@@ -5,7 +5,6 @@ import { getRandomItem } from './utils.js';
 let gameState = ''; // 'guess' or 'results'
 let userPlay = ''; //'rock' or 'paper' or 'scissors'
 let computerPlay = ''; //'rock' or 'paper' or 'scissors'
-let result = ''; // 'win' or 'lose' or 'draw'
 
 let wins = 0;
 let losses = 0;
@@ -48,37 +47,30 @@ function playGame(userGuess) {
     resultsSection.classList.remove('hidden');
 
     if (userPlay === computerPlay) {
-        result = 'draw';
         draws++;
         resultDisplay.textContent = "It's a draw!";
     }
     if (userPlay === 'rock' && computerPlay === 'scissors') {
-        result = 'win';
         wins++;
         resultDisplay.textContent = 'You won!';
     }
     if (userPlay === 'rock' && computerPlay === 'paper') {
-        result = 'lose';
         losses++;
         resultDisplay.textContent = 'You lost.';
     }
     if (userPlay === 'paper' && computerPlay === 'rock') {
-        result = 'win';
         wins++;
         resultDisplay.textContent = 'You won!';
     }
     if (userPlay === 'paper' && computerPlay === 'scissors') {
-        result = 'lose';
         losses++;
         resultDisplay.textContent = 'You lost.';
     }
     if (userPlay === 'scissors' && computerPlay === 'rock') {
-        result = 'lose';
         losses++;
         resultDisplay.textContent = 'You lost.';
     }
     if (userPlay === 'scissors' && computerPlay === 'paper') {
-        result = 'win';
         wins++;
         resultDisplay.textContent = 'You won!';
     }

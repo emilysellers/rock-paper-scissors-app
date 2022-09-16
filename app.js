@@ -85,20 +85,17 @@ function playGame(userGuess) {
 
     displayResults();
     displayScorecard();
-    console.log('user threw', userGuess);
-    console.log('computer threw', computerPlay);
-    console.log('result is', result);
-    console.log('total plays', totalPlays);
-    console.log(resultDisplay.textContent);
 }
 
 // event listeners
 throwRock.addEventListener('click', () => {
     playGame('rock');
 });
+
 throwPaper.addEventListener('click', () => {
     playGame('paper');
 });
+
 throwScissors.addEventListener('click', () => {
     playGame('scissors');
 });

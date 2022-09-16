@@ -3,7 +3,17 @@ img {
 }
 
 body {
-    background-color: rgb(160, 187, 187);
+    background-color: rgb(185, 217, 217);
+}
+
+main {
+    display: grid;
+    margin: 20px;
+    gap: 20px;
+}
+
+h2 {
+    color: rgb(16, 80, 16);
 }
 
 .hidden {
@@ -13,6 +23,13 @@ body {
 .scoreboard {
     display: grid;
     grid-template-columns: 10% 5% 10% 5% 10% 5% 10% 5%;
+}
+
+.plays {
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    align-items: center;
+    padding-left: 50px;
 }
 
 body {

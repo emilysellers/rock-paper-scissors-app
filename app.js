@@ -27,6 +27,8 @@ const throwPaper = document.getElementById('throw-paper-button');
 const throwScissors = document.getElementById('throw-scissors-button');
 const userPlaySection = document.getElementById('user-play-section');
 const resultDisplay = document.getElementById('result-display');
+const computerPlayResult = document.getElementById('computer-play-result');
+const userPlayResult = document.getElementById('user-play-result');
 
 // display
 function displayGuess() {
@@ -38,6 +40,9 @@ function playGame(userGuess) {
     userPlay = userGuess;
     computerPlay = getRandomItem(choices);
     totalPlays++;
+
+    userPlayResult.textContent = userGuess;
+    computerPlayResult.textContent = computerPlay;
 
     userPlaySection.classList.add('hidden');
     resultsSection.classList.remove('hidden');

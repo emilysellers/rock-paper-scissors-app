@@ -35,13 +35,13 @@
                 <h2>Scoreboard</h2>
                 <p class="scoreboard">
                     wins: 
-                    <span id="wins-display"></span>
+                    <span id="wins-display">0</span>
                     losses: 
-                    <span id="losses-display"></span>
+                    <span id="losses-display">0</span>
                     draws: 
-                    <span id="draws-display"></span>
+                    <span id="draws-display">0</span>
                     total plays: 
-                    <span id="total-plays-display"></span>
+                    <span id="total-plays-display">0</span>
                 </p>
             </section>
 
@@ -64,15 +64,12 @@
 
             <section id="results-section">
                 <h2>The result:</h2>
-                <div class="plays">
-                <h3>You played:</h3>
-                <p id="user-play-result"></p>
+                <div class="results-display">
+                <p>you played:</p>
+                <h3 id="user-play-result"></h3>
+                <p>computer played:</p>
+                <h3 id="computer-play-result"></h3>
             </div>
-            <div class="plays">
-                <h3>Computer played:</h3>
-                <p id="computer-play-result"></p>
-            </div>
-            
                 <h2 id="result-display">You win!</h2>
             
                 <button id="play-again-button">Play again</button>

@@ -9,14 +9,13 @@ body {
     background-color: rgb(185, 217, 217);
 }
 
-main {
-    display: grid;
-    margin: 20px;
-    gap: 20px;
+h2 {
+    color: rgb(92, 63, 134);
 }
 
-h2 {
-    color: rgb(16, 80, 16);
+main {
+    display: grid;
+    align-items: center;
 }
 
 .hidden {
@@ -24,15 +23,28 @@ h2 {
 }
 
 .scoreboard {
-    display: grid;
-    grid-template-columns: 90px 40px 90px 40px 90px 40px 90px 40px;
+    display: flex;
+    align-content: center;
+    gap: 20px;
+    font-weight: bold;
+    font-size: 1em;
 }
 
-.plays {
+/* .plays {
     display: grid;
-    grid-template-columns: 25% 1fr;
+    grid-template-columns: 15% 1fr;
     align-items: center;
-    padding-left: 50px;
+    padding-left: 50px; 
+}*/
+
+.results-display {
+    display: grid;
+    grid-template-columns: 110px 150px 130px 150px;
+    gap: 20px;
+    font-size: 1em;
+    align-items: center;
+    justify-content: start;
+    align-content: center;
 }
 
 body {
